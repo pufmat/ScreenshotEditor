@@ -1,10 +1,10 @@
 function RectAction(){
 	Action.call(this);
-	this.startPos = 0;
+	this.startPos = undefined;
 }
 RectAction.prototype = Object.create(Action.prototype);
 RectAction.prototype.isValid = function(pos){
-	return this.a && this.b;
+	return this.a && this.b && this.a.x != this.b.x && this.a.y != this.b.y;
 };
 RectAction.prototype.move = function(pos){
 	if(!this.startPos){

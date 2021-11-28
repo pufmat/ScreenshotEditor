@@ -45,7 +45,7 @@ function setupCanvas(){
 			var touch = event.changedTouches[i];
 			var x = (touch.clientX - canvas.getBoundingClientRect().left);
 			var y = (touch.clientY - canvas.getBoundingClientRect().top);
-			onMouseMove(new Vec2(x, y), BUTTON_LEFT);
+			onMouseMove(new Vec2(x, y));
 		}
 	});
 	canvas.addEventListener("touchend", function(event){

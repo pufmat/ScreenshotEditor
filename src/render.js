@@ -6,6 +6,9 @@ var renderHeight = 0;
 var prevRenderWidth = 0;
 var prevRenderHeight = 0;
 
+var scale = 100;
+var transform = new Vec2(0, 0);
+
 function render(){
 	var renderData = actionManager.render(originalImage);
 	
@@ -29,7 +32,6 @@ function render(){
 			scale = 25;
 		}
 		updateBounds();
-		rescale = false;
 	}
 	
 	prevRenderWidth = renderWidth;

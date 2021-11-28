@@ -3,9 +3,6 @@ var originalImage;
 var prevPos = new Vec2(0, 0);
 var mousePressed = false;
 
-var scale = 100;
-var transform = new Vec2(0, 0);
-
 var selectedTool = TOOL_NONE;
 var prevSelectedTool = TOOL_NONE;
 
@@ -130,6 +127,7 @@ function onMouseDown(pos, btn){
 	
 	if(currentAction){
 		actionManager.addAction(currentAction);
+		currentAction.move(getPosOnImage(pos));
 		render();
 	}
 	

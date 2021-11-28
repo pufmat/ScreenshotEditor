@@ -3,8 +3,8 @@ function ArrowAction(color, thickness){
 	this.color = color;
 	this.thickness = thickness;
 	
-	this.startPos = 0;
-	this.endPos = 0;
+	this.startPos = undefined;
+	this.endPos = undefined;
 }
 ArrowAction.prototype = Object.create(Action.prototype);
 ArrowAction.prototype.move = function(pos){
