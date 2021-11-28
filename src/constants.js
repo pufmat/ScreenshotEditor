@@ -1,0 +1,14 @@
+var TOOL_NONE = 0;
+var TOOL_MOVE = 1;
+var TOOL_DRAW = 2;
+var TOOL_ARROW = 3;
+var TOOL_BLUR = 4;
+var TOOL_CROP = 5;
+
+var BUTTON_LEFT = 0;
+var BUTTON_MIDDLE = 1;
+var BUTTON_RIGHT = 2;
+
+var SUBMENU_COLOR = 0;
+var SUBMENU_COLOR_THICKNESS = 1;
+var SUBMENU_SAVE = 2;

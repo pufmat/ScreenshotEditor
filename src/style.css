@@ -1,0 +1,292 @@
+html, body {
+	margin: 0;
+	overflow: hidden;
+	position: relative;
+	color: #000000;
+	width: 100%;
+	height: 100%;
+	font-size: 0;
+	user-select: none;
+}
+
+.checkboard{
+	background-color: #8a8b8c;
+	background-image:
+		linear-gradient(45deg, #7a7b7c 25%, transparent 25%),
+		linear-gradient(-45deg, #7a7b7c 25%, transparent 25%),
+		linear-gradient(45deg, transparent 75%, #7a7b7c 75%),
+		linear-gradient(-45deg, transparent 75%, #7a7b7c 75%);
+	background-size: 16px 16px;
+	background-position: 0 0, 0 8px, 8px -8px, -8px 0px;
+}
+
+.icon{
+	width: 32px;
+	height: 32px;
+	margin: 4px 12px;
+	padding: 4px;
+	display: inline-block;
+	image-rendering: pixelated;
+	cursor: pointer;
+}
+.icon:hover:not(.selected){
+	background-color: rgba(0, 0, 0, 0.1);
+}
+.disabled .icon{
+	cursor: not-allowed;
+}
+.selected{
+	background-color: rgba(0, 0, 0, 0.2);
+}
+
+
+.wrapper{
+	position: relative;
+}
+.separator{
+	width: 32px;
+	height: 2px;
+	background-color: #000000;
+	margin: 4px 16px;
+	display: inline-block;
+}
+
+
+.logo{
+	width: 48px;
+	margin: 8px;
+}
+
+
+.container{
+	position: absolute;
+	top: 45%;
+	left: 0;
+	width: 64px;
+	transform: translate(0, -50%);
+}
+
+
+.submenu{
+	position: absolute;
+	left: 64px;
+	background-color: #cacbcc;
+	white-space: nowrap;
+	padding: 8px;
+	min-height: 48px;
+	display: none;
+}
+.expand-top{
+	top: -8px;
+}
+.expand-bottom{
+	bottom: -8px;
+}
+.submenu div{
+	display: inline-block;
+	vertical-align: top;
+}
+.submenu .icon{
+	margin: 4px;
+	padding: 4px;
+}
+.visible{
+	display: block;
+}
+
+
+.thickness-group{
+	width: 48px;
+	height: 144px;
+	white-space: normal;
+}
+.thickness-group .icon div{
+	height: 32px;
+	margin: 0 auto;
+	background-color: #000000;
+}
+.t0 div{
+	width: 2px;
+}
+.t1 div{
+	width: 4px;
+}
+.t2 div{
+	width: 10px;
+}
+
+
+.color-group{
+	width: 144px;
+	height: 144px;
+	white-space: normal;
+}
+.color-group .icon{
+	width: 24px;
+	height: 24px;
+	padding: 8px;
+}
+.color-group .icon div{
+	width: 24px;
+	height: 24px;
+	border-radius: 16px;
+}
+.c0 div{
+	background-color: #ff0000;
+}
+.c1 div{
+	background-color: #ff7700;
+}
+.c2 div{
+	background-color: #ffff00;
+}
+.c3 div{
+	background-color: #22dd00;
+}
+.c4 div{
+	background-color: #0099ff;
+}
+.c5 div{
+	background-color: #6633ff;
+}
+.c6 div{
+	background-color: #ff00aa;
+}
+.c7 div{
+	background-color: #000000;
+}
+.c8 div{
+	background-color: #ffffff;
+}
+
+
+.button{
+	padding: 6px;
+	margin: 4px;
+	white-space: nowrap;
+	cursor: pointer;
+}
+.button div{
+	color: #000000;
+	border: 2px solid #000000;
+	border-radius: 2px;
+	font-size: 12px;
+	font-family: sans-serif;
+	padding: 5px;
+	height: 14px;
+	line-height: 14px;
+}
+.button:hover{
+	background-color: rgba(0, 0, 0, 0.1);
+}
+
+#menu{
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	width: 64px;
+	background-color: #eaebec;
+	text-align: center;
+}
+
+
+#drop-zone{
+	width: 100%;
+	height: 100%;
+}
+#start{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	color: #fafbfc;
+	border: 2px dashed #fafbfc;
+	filter: drop-shadow(0 2px 4px #000000);
+	padding: 32px;
+	text-align: center;
+	font-family: monospace;
+	cursor: pointer;
+}
+#start .or{
+	font-size: 12px;
+	padding: 8px;
+	text-transform: uppercase;
+	color: #dadbdc;
+}
+#start .text{
+	font-size: 16px;
+	text-transform: uppercase;
+}
+
+#file{
+	display: none;
+}
+
+
+#preview{
+	width: 256px;
+	height: 256px;
+	object-fit: contain;
+	display: block;
+	user-select: auto;
+	margin: 8px;
+}
+
+
+#editor{
+	position: absolute;
+	top: 0;
+	left: 64px;
+	right: 0;
+	bottom: 0;
+}
+canvas{
+	width: 100%;
+	height: 100%;
+	display: none;
+	cursor: crosshair;
+}
+
+@media (max-height: 670px){
+	.container{
+		position: static;
+		transform: none;
+		margin-top: 0;
+	}
+}
+
+@media (prefers-color-scheme: dark){
+	.checkboard{
+		background-color: #4a4b4c;
+		background-image:
+			linear-gradient(45deg, #3a3b3c 25%, transparent 25%),
+			linear-gradient(-45deg, #3a3b3c 25%, transparent 25%),
+			linear-gradient(45deg, transparent 75%, #3a3b3c 75%),
+			linear-gradient(-45deg, transparent 75%, #3a3b3c 75%);
+		background-size: 16px 16px;
+		background-position: 0 0, 0 8px, 8px -8px, -8px 0px;
+	}
+	#menu{
+		background-color: #1a1b1c;
+	}
+	.icon{
+		filter: invert(100%);
+	}
+	.submenu .icon{
+		filter: none;
+	}
+	.submenu{
+		background-color: #2a2b2c;
+	}
+	.thickness-group .icon div{
+		background-color: #ffffff;
+	}
+	.separator{
+		background-color: #ffffff;
+	}
+	.button div{
+		color: #ffffff;
+		border-color: #ffffff;
+	}
+}

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta charset="UTF-8">
+		<link rel="stylesheet" href="style.css">
+		<script src="constants.js"></script>
+		<script src="vec2.js"></script>
+		<script src="renderdata.js"></script>
+		<script src="actions/actionmanager.js"></script>
+		<script src="actions/action.js"></script>
+		<script src="actions/drawaction.js"></script>
+		<script src="actions/arrowaction.js"></script>
+		<script src="actions/rectaction.js"></script>
+		<script src="actions/bluraction.js"></script>
+		<script src="actions/cropaction.js"></script>
+		<script src="canvas.js"></script>
+		<script src="render.js"></script>
+		<script src="gui.js"></script>
+		<script src="main.js"></script>
+		<title>Pufferfish</title>
+	</head>
+	<body class="checkboard">
+		<div id="editor">
+			<div id="drop-zone">
+				<input type="file" id="file" accept="image/*">
+				<div id="start">
+					<div class="text">
+						drop an image here
+					</div>
+					<div class="or">or</div>
+					<div class="text">
+						paste an image here
+					</div>
+					<div class="or">or</div>
+					<div class="text">
+						click here to choose a file
+					</div>
+				</div>
+			</div>
+			<canvas id="canvas"></canvas>
+		</div>
+		<div id="menu">
+			<img class="logo" src="http://pufferfish.pl/images/logo.svg">
+			<div class="container disabled">
+				<div class="icon" id="move" title="Move"><img src="icons/move.png"></div>
+				<div class="wrapper">
+					<div class="icon" id="draw" title="Pencil"><img src="icons/draw.png"></div>
+					<div class="submenu expand-top">
+						<div class="color-group">
+							<div class="icon c0"><div></div></div>
+							<div class="icon c1"><div></div></div>
+							<div class="icon c2"><div></div></div>
+							<div class="icon c3"><div></div></div>
+							<div class="icon c4"><div></div></div>
+							<div class="icon c5"><div></div></div>
+							<div class="icon c6"><div></div></div>
+							<div class="icon c7"><div></div></div>
+							<div class="icon c8"><div></div></div>
+						</div>
+						<div class="thickness-group">
+							<div class="icon t0"><div></div></div>
+							<div class="icon t1"><div></div></div>
+							<div class="icon t2"><div></div></div>
+						</div>
+					</div>
+				</div>
+				<div class="wrapper">
+					<div class="icon" id="arrow" title="Arrow"><img src="icons/arrow.png"></div>
+					<div class="submenu expand-top">
+						<div class="color-group">
+							<div class="icon c0"><div></div></div>
+							<div class="icon c1"><div></div></div>
+							<div class="icon c2"><div></div></div>
+							<div class="icon c3"><div></div></div>
+							<div class="icon c4"><div></div></div>
+							<div class="icon c5"><div></div></div>
+							<div class="icon c6"><div></div></div>
+							<div class="icon c7"><div></div></div>
+							<div class="icon c8"><div></div></div>
+						</div>
+						<div class="thickness-group">
+							<div class="icon t0"><div></div></div>
+							<div class="icon t1"><div></div></div>
+							<div class="icon t2"><div></div></div>
+						</div>
+					</div>
+				</div>
+				<div class="icon" id="blur" title="Blur"><img src="icons/blur.png"></div>
+				<div class="icon" id="crop" title="Crop"><img src="icons/crop.png"></div>
+				<div class="separator"></div>
+				<div class="icon" id="zoomin" title="Zoom in"><img src="icons/zoomin.png"></div>
+				<div class="icon" id="zoomout" title="Zoom out"><img src="icons/zoomout.png"></div>
+				<div class="separator"></div>
+				<div class="icon" id="undo" title="Undo"><img src="icons/undo.png"></div>
+				<div class="separator"></div>
+				<div class="wrapper">
+					<div class="icon" id="save" title="Save"><img src="icons/save.png"></div>
+					<div class="submenu expand-bottom">
+						<img id="preview" class="checkboard">
+						<div class="button" id="button-save"><div>Save image</div></div>
+						<div class="button" id="button-copy"><div>Copy to clipboard</div></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
